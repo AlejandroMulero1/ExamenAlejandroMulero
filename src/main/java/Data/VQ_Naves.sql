@@ -1,0 +1,10 @@
+insert into VQ_Naves (id, ganadero, ubicacion) values (1, 'Aurora Lewsy', 'Ürümqi');
+insert into VQ_Naves (id, ganadero, ubicacion) values (2, 'Jorie Comiam', 'Genova');
+insert into VQ_Naves (id, ganadero, ubicacion) values (3, 'Rogers Boost', 'McGrath');
+insert into VQ_Naves (id, ganadero, ubicacion) values (4, 'Foster Waitland', 'Jomsom');
+insert into VQ_Naves (id, ganadero, ubicacion) values (5, 'Sherline McQuilkin', 'Tabuaeran Island');
+insert into VQ_Naves (id, ganadero, ubicacion) values (6, 'Matthus Gateland', 'Bobo Dioulasso');
+insert into VQ_Naves (id, ganadero, ubicacion) values (7, 'Diannne Chatterton', 'Garanhuns');
+insert into VQ_Naves (id, ganadero, ubicacion) values (8, 'Fidole Tysack', 'Watson Lake');
+insert into VQ_Naves (id, ganadero, ubicacion) values (9, 'Rinaldo De Francesco', 'Dunk Island');
+insert into VQ_Naves (id, ganadero, ubicacion) values (10, 'Maurita Fundell', null);
