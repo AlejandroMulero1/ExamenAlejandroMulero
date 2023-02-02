@@ -12,10 +12,11 @@ public class Crud {
      * Método que guarda un objeto en la base de datos, a través de una sesión pasada por parámetro, se inicia una transacción
      * y si no se produce ninguna excepción en el guardado hace una commit, al utilizar el saveOrUpdate este método
      * también puede ser utilizado para actualizar
-     * @param session sesión la cual se utilizara para insertar en la base de datos
+     * @param conexion objeto de la clase Conexión el cual se utilizara para insertar en la base de datos
      * @param obj obj a guardar o actualizar en la base de datos
      */
-    public static void saveOrUpdate(Session session, Object obj) {
+    public static void saveOrUpdate(Conexion conexion, Object obj) {
+        Session session=conexion.abrirSesion();
         //Inicio la transaccion
         Transaction transaction = session.beginTransaction();
         try {
@@ -38,12 +39,13 @@ public class Crud {
     /**
      * Método que lee un objeto de la base de datos, a través de una sesión pasada por parámetro, se inicia una transacción
      * y si no se produce ninguna excepción en la lectura hace una commit
-     * @param session sesión la cual se utilizara para insertar en la base de datos
+     * @param conexion objeto de la clase Conexión el cual se utilizara para insertar en la base de datos
      * @param claseEntity Clase a la que pertenece el objeto que se va a leer de la base de datos
      * @param id PK del objeto a leer de la base de datos
      * @return Object
      */
-    public static Object read(Session session, Class claseEntity , int id) {
+    public static Object read(Conexion conexion, Class claseEntity , int id) {
+        Session session=conexion.abrirSesion();
         Object objectDB=null;
         // start a transaction
         Transaction transaction = session.beginTransaction();
@@ -64,11 +66,12 @@ public class Crud {
     /**
      * Metodo que borra un objeto de la base de datos, a través de una sesión pasada por parámetro, y un
      * load con la id, se inicia una transacción y si no se produce ninguna excepción en el borrado hace una commit
-     * @param session sesión la cual se utilizara para insertar en la base de datos
+     * @param conexion objeto de la clase Conexión el cual se utilizara para insertar en la base de datos
      * @param claseEntity Clase a la que pertenece el objeto que se va a leer de la base de datos
      * @param id PK del objeto a leer de la base de datos
      */
-    public static void delete(Session session, Class claseEntity, int id) {
+    public static void delete(Conexion conexion, Class claseEntity, int id) {
+        Session session=conexion.abrirSesion();
         Transaction transaction = session.beginTransaction();
         try {
             Object obj = session.load(claseEntity, id);
